@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '../utils/createEmotionCache';
@@ -15,7 +14,6 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const theme = createTheme({})
   return (
     <CacheProvider value={emotionCache}>
       <ColorModeProvider>
