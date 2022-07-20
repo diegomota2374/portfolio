@@ -1,5 +1,6 @@
 import {createContext, useState, useMemo} from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
+import { grey } from '@mui/material/colors';
 
 
 const ColorModeContext = createContext({toggleColorMode: () => {}})
@@ -9,7 +10,7 @@ export interface ColorModeProps {
 }
 
 export const ColorModeProvider = ({children}: ColorModeProps) => {
-    const [mode, setMode] = useState<'light' | 'dark'>('light');
+    const [mode, setMode] = useState<'light' | 'dark'>('dark');
     const colorMode = useMemo(
       () => ({
         toggleColorMode: () => {
@@ -36,15 +37,15 @@ export const ColorModeProvider = ({children}: ColorModeProps) => {
               white: '#FFF'
             },
             primary: {
-              light: '#9E69FD',
-              main: '#9155FD',
-              dark: '#804BDF',
+              light: '#2c387e',
+              main: '#3f51b5',
+              dark: '#6573c3',
               contrastText: '#FFF'
             },
             secondary: {
-              light: '#9C9FA4',
-              main: '#8A8D93',
-              dark: '#777B82',
+              light: '#2a3eb1',
+              main: '#3d5afe',
+              dark: '#637bfe',
               contrastText: '#FFF'
             },
             success: {
