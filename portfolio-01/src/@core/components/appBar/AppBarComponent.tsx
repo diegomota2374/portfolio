@@ -10,20 +10,37 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
-import SvgIcon from '@mui/material/SvgIcon'
 
-import { useTheme } from "@mui/material/styles";
+import { keyframes, useTheme } from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import useColorMode from "../../../hooks/useColorMode";
+import styled from "@emotion/styled";
+
 
 const pages = ["Inicio", "Sobre mim", "Projetos", "Habilidades"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+const IconsBar = styled(Box)(() => ({
+  display:'flex',
+  transition: '0,03',
+  animation: 'iconsMove 2s ease-in-out',
+  '@keyframes iconsMove': {
+    '0%':{
+      opacity: '0',
+      transform: 'translateX(-200%)'
+    },
+    '100%':{
+      opacity: '1',
+      transform: 'translateX(5%)'
+    }
+  }
+}))
+
 const ResponsiveAppBar = () => {
   const theme = useTheme();
+  
   const colorMode = useColorMode();
 
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -48,24 +65,6 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -102,25 +101,13 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <IconsBar>
+            <Avatar alt="React" src="/react-icon.png" />
+            <Avatar alt="Next" src="/next.png" />
+            <Avatar alt="TypeScript" src="/ts.png" />
+            <Avatar alt="Material UI" src="/materialUi.png" />
+            <Avatar alt="GitHub" src="/git.png"/>
+          </IconsBar>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -139,7 +126,7 @@ const ResponsiveAppBar = () => {
               flexGrow: 0,
             }}
           >
-            <Typography sx={{ mr: 2 }}>
+            <Typography sx={{ mx: 2 }}>
               {theme.palette.mode}
               <IconButton
                 sx={{ ml: 1 }}
@@ -156,7 +143,7 @@ const ResponsiveAppBar = () => {
 
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="/perfil.jpg" />
               </IconButton>
             </Tooltip>
 
