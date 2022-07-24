@@ -11,11 +11,10 @@ const Home: NextPage = () => {
       <Card>
         <AppBarComponent/>
       </Card>
-      <Container>
+      <Box>
         <Start/>
-      </Container>
+      </Box>
     </Box>
-
   )
 }
 
