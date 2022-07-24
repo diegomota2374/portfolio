@@ -22,21 +22,67 @@ import styled from "@emotion/styled";
 const pages = ["Inicio", "Sobre mim", "Projetos", "Habilidades"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const IconsBar = styled(Box)(() => ({
-  display:'flex',
-  transition: '0,03',
-  animation: 'iconsMove 2s ease-in-out',
-  '@keyframes iconsMove': {
-    '0%':{
-      opacity: '0',
-      transform: 'translateX(-200%)'
-    },
-    '100%':{
-      opacity: '1',
-      transform: 'translateX(5%)'
-    }
+
+const ReactIcon = styled(Avatar)(() => ({
+  animation: 'ReactIcon 2s ease-out infinite alternate',
+  '@keyframes ReactIcon': {
+    'from': {
+      transform: 'translateY(15%)'
+     }, 
+     'to': {
+      transform: 'translateY(-15%)'
+     } 
   }
 }))
+
+const NextIcon = styled(Avatar)(() => ({
+  animation: 'NextIcon 2s ease-out 0.5s infinite alternate',
+  '@keyframes NextIcon': {
+    'from': {
+      transform: 'translateY(15%)'
+     }, 
+     'to': {
+      transform: 'translateY(-15%)'
+     } 
+  }
+}))
+
+const TSIcon = styled(Avatar)(() => ({
+  animation: 'TSIcon 2s ease-out 1s infinite  alternate',
+  '@keyframes TSIcon': {
+    'from': {
+      transform: 'translateY(15%)'
+     }, 
+     'to': {
+      transform: 'translateY(-15%)'
+     } 
+  }
+}))
+
+const MaterialUIIcon = styled(Avatar)(() => ({
+  animation: 'MaterialUIIcon 2s ease-out 1.5s  infinite alternate',
+  '@keyframes MaterialUIIcon': {
+    'from': {
+      transform: 'translateY(15%)'
+     }, 
+     'to': {
+      transform: 'translateY(-15%)'
+     } 
+  }
+}))
+
+const GitIcon = styled(Avatar)(() => ({
+  animation: 'GitIcon 2s ease-out 2s infinite alternate',
+  '@keyframes GitIcon': {
+   'from': {
+    transform: 'translateY(15%)'
+   }, 
+   'to': {
+    transform: 'translateY(-15%)'
+   } 
+  }
+}))
+
 
 const ResponsiveAppBar = () => {
   const theme = useTheme();
@@ -101,13 +147,13 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <IconsBar>
-            <Avatar alt="React" src="/react-icon.png" />
-            <Avatar alt="Next" src="/next.png" />
-            <Avatar alt="TypeScript" src="/ts.png" />
-            <Avatar alt="Material UI" src="/materialUi.png" />
-            <Avatar alt="GitHub" src="/git.png"/>
-          </IconsBar>
+          <Box sx={{ display:'flex'}}>
+            <ReactIcon alt="React" src="/react-icon.png" />
+            <NextIcon alt="Next" src="/next.png" />
+            <TSIcon alt="TypeScript" src="/ts.png" />
+            <MaterialUIIcon alt="Material UI" src="/materialUi.png" />
+            <GitIcon alt="GitHub" src="/git.png"/>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
