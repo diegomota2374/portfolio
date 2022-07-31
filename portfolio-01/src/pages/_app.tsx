@@ -1,30 +1,84 @@
-import Head from 'next/head';
-import { AppProps } from 'next/app';
-import CssBaseline from '@mui/material/CssBaseline';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import createEmotionCache from '../utils/createEmotionCache';
-import { ColorModeProvider } from '../contexts/ColorModeContext';
+// ** Next Imports
+import Head from 'next/head'
+import { Router } from 'next/router'
+import type { NextPage } from 'next'
+import type { AppProps } from 'next/app'
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache();
+// ** Loader Import
+import NProgress from 'nprogress'
 
-interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache;
+// ** Emotion Imports
+import { CacheProvider } from '@emotion/react'
+import type { EmotionCache } from '@emotion/cache'
+
+// ** Config Imports
+import themeConfig from 'src/configs/themeConfig'
+
+// ** Component Imports
+import UserLayout from 'src/layouts/UserLayout'
+import ThemeComponent from '../@core/theme/ThemeComponent'
+
+// ** Contexts
+import { SettingsConsumer, SettingsProvider } from '../@core/context/settingsContext'
+
+// ** Utils Imports
+import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
+
+// ** React Perfect Scrollbar Style
+import 'react-perfect-scrollbar/dist/css/styles.css'
+
+// ** Global css styles
+import '../../styles/globals.css'
+
+// ** Extend App Props with Emotion
+type ExtendedAppProps = AppProps & {
+  Component: NextPage
+  emotionCache: EmotionCache
 }
 
-export default function MyApp(props: MyAppProps) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+const clientSideEmotionCache = createEmotionCache()
+
+// ** Pace Loader
+if (themeConfig.routingLoader) {
+  Router.events.on('routeChangeStart', () => {
+    NProgress.start()
+  })
+  Router.events.on('routeChangeError', () => {
+    NProgress.done()
+  })
+  Router.events.on('routeChangeComplete', () => {
+    NProgress.done()
+  })
+}
+
+// ** Configure JSS & ClassName
+const App = (props: ExtendedAppProps) => {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+
+  // Variables
+  const getLayout = Component.getLayout ?? (page => <UserLayout>{page}</UserLayout>)
+
   return (
     <CacheProvider value={emotionCache}>
-      <ColorModeProvider>
-        <Head>
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
-        </Head>
-      
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Component {...pageProps} />
-      </ColorModeProvider>
+      <Head>
+        <title>Portfolio</title>
+        <meta
+          name='description'
+          content={`${themeConfig.templateName} – Material Design React Admin Dashboard Template – is the most developer friendly & highly customizable Admin Dashboard Template based on MUI v5.`}
+        />
+        <meta name='keywords' content='Material Design, MUI, Admin Template, React Admin Template' />
+        <meta name='viewport' content='initial-scale=1, width=device-width' />
+      </Head>
+
+      <SettingsProvider>
+        <SettingsConsumer>
+          {({ settings }) => {
+            return <ThemeComponent settings={settings}>{getLayout(<Component {...pageProps} />)}</ThemeComponent>
+          }}
+        </SettingsConsumer>
+      </SettingsProvider>
     </CacheProvider>
-  );
+  )
 }
+
+export default App

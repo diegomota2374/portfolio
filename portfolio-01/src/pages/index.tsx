@@ -1,21 +1,21 @@
-import type { NextPage } from 'next'
-import Box from '@mui/material/Box';
-import { Card, Container } from '@mui/material'
-import AppBarComponent from '../@core/components/appBar/AppBarComponent'
-import Start from '../@core/components/start';
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
 
+// ** Styled Component Import
+import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
-const Home: NextPage = () => {
+// ** Demo Components Imports
+
+const Dashboard = () => {
   return (
-    <Box>
-      <Card>
-        <AppBarComponent/>
-      </Card>
-      <Box>
-        <Start/>
-      </Box>
-    </Box>
+    <ApexChartWrapper>
+      <Grid container spacing={6}>
+        <Grid item xs={12} md={4}>
+
+        </Grid>
+      </Grid>
+    </ApexChartWrapper>
   )
 }
 
-export default Home
+export default Dashboard
