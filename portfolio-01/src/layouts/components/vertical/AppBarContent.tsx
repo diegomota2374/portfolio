@@ -159,7 +159,7 @@ const ResponsiveAppBar = (props: Props) => {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ display:'flex'}}>
+          <Box sx={{ display:'flex',transform:'translateX(-40px)'}}>
             <ReactIcon alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
             <NextIcon alt="Next" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" />
             <TSIcon alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
