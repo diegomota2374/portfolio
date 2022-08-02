@@ -120,7 +120,7 @@ const ResponsiveAppBar = (props: Props) => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed" z-index='10' >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -159,7 +159,7 @@ const ResponsiveAppBar = (props: Props) => {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ display:'flex',transform:'translateX(-40px)'}}>
+          <Box sx={{ display:'flex'}}>
             <ReactIcon alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
             <NextIcon alt="Next" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" />
             <TSIcon alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />

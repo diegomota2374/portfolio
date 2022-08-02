@@ -1,5 +1,7 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
+import About from 'src/@core/components/about'
+import Start from 'src/@core/components/start'
 
 // ** Styled Component Import
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
@@ -9,11 +11,12 @@ import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 const Dashboard = () => {
   return (
     <ApexChartWrapper>
-      <Grid container spacing={6}>
-        <Grid item xs={12} md={4}>
-
+        <Grid >
+          <Start/>
         </Grid>
-      </Grid>
+        <Grid >
+          <About/>
+        </Grid>
     </ApexChartWrapper>
   )
 }
