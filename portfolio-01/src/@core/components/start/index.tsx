@@ -99,7 +99,7 @@ const Start = () => {
   const { settings } = useSettings()
 
   return (
-    <Box
+    <Box id='Inicio'
       sx={
         settings.mode === 'dark'
           ? { backgroundColor: 'gray', position: 'relative' }

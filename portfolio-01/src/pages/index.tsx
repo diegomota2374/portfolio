@@ -10,7 +10,7 @@ import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 const Dashboard = () => {
   return (
-    <ApexChartWrapper>
+    <ApexChartWrapper >
         <Grid >
           <Start/>
         </Grid>

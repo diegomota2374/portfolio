@@ -73,34 +73,34 @@ const About = () => {
   const { settings } = useSettings()
 
   return (
-    <Box
+    <Box id='Sobre mim'
       sx={
         settings.mode === 'dark'
           ? {
               height: '90vh',
               width: '100%',
-              backgroundColor: '#27243d',
               position: 'relative',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundImage: 'url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg)',
-              backgroundPosition: 'start',
+              backgroundColor: '#27243d',
+              backgroundImage: 'url(/backabout.png)',
+              backgroundPosition: '5% 10%',
               backgroundRepeat: 'no-repeat',
-              backgroundSize: '10%',
+              backgroundSize: '20%',
             }
           : {
               height: '90vh',
               width: '100%',
-              backgroundColor: '#9155FD',
               position: 'relative',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundImage: 'url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg)',
-              backgroundPosition: 'start',
+              backgroundColor: '#9155FD',
+              backgroundImage: 'url(/backabout.png)',
+              backgroundPosition: '5% 10%',
               backgroundRepeat: 'no-repeat',
-              backgroundSize: '10%',
+              backgroundSize: '20%',
             }
       }
     >
