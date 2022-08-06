@@ -4,14 +4,8 @@ import { styled } from '@mui/material/styles'
 
 const Title = styled(Typography)(({ theme }) => ({
   textShadow: '2px 3px 5px #00000030',
-  ':hover': {
-    fontSize: '98px'
-  },
   [theme.breakpoints.down('md')]: {
     fontSize: '58px',
-    ':hover': {
-      fontSize: '60px'
-    }
   }
 }))
 const SubTitle = styled(Typography)(({ theme }) => ({
