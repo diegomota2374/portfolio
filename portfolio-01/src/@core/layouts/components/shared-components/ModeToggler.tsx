@@ -1,5 +1,5 @@
 // ** MUI Imports
-import { PaletteMode } from '@mui/material'
+import { Box, PaletteMode, Typography } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 
 // ** Icons Imports
@@ -32,7 +32,17 @@ const ModeToggler = (props: Props) => {
 
   return (
     <IconButton color='inherit' aria-haspopup='true' onClick={handleModeToggle}>
-      {settings.mode === 'dark' ? <WeatherSunny /> : <WeatherNight />}
+      {settings.mode === 'dark' ? (
+        <Box sx={{display: 'flex'}}>
+          <Typography variant='button'>Claro</Typography>
+          <WeatherSunny />
+        </Box>
+      ) : (
+        <Box sx={{display: 'flex'}}>
+          <Typography variant='button' sx={{color:'white'}}>Escuro</Typography>
+          <WeatherNight />
+        </Box>
+      )}
     </IconButton>
   )
 }

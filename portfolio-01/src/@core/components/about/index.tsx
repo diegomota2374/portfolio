@@ -2,6 +2,18 @@ import { Avatar, Box, Card, Typography } from '@mui/material'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import { styled } from '@mui/material/styles'
 
+const BoxWrapper = styled(Box)(() => ({
+  height: '90vh',
+  width: '100%',
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundImage: 'url(/backAbout.png)',
+  backgroundPosition: '0% 10%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '50%'
+}))
 const CardAbout = styled(Card)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
@@ -60,11 +72,10 @@ const AvatarSize = styled(Avatar)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
   textShadow: '2px 3px 5px #00000030',
   [theme.breakpoints.down('md')]: {
-    fontSize: '18px',
+    fontSize: '18px'
   }
 }))
 const SubTitle = styled(Typography)(({ theme }) => ({
-
   [theme.breakpoints.down('md')]: {
     fontSize: '14px'
   }
@@ -73,54 +84,36 @@ const About = () => {
   const { settings } = useSettings()
 
   return (
-    <Box id='Sobre mim'
+    <BoxWrapper
+      id='Sobre mim'
       sx={
         settings.mode === 'dark'
           ? {
-              height: '90vh',
-              width: '100%',
-              position: 'relative',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: '#27243d',
-              backgroundImage: 'url(/backabout.png)',
-              backgroundPosition: '5% 10%',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '20%',
+              backgroundColor: '#27243d'
             }
           : {
-              height: '90vh',
-              width: '100%',
-              position: 'relative',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: '#9155FD',
-              backgroundImage: 'url(/backabout.png)',
-              backgroundPosition: '5% 10%',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '20%',
+              backgroundColor: '#9155FD'
             }
       }
     >
       <CardAbout sx={settings.mode === 'dark' ? { borderColor: 'white' } : { borderColor: 'gray' }}>
         <AvatarSize alt='Remy Sharp' src='/diego.png' sx={{}} />
         <Typography sx={{ p: 5 }}>
-          <Title variant='h4' sx={{pb:4}}>Olá, meu nome é Diego Mota Cavalcante.</Title>
-          <SubTitle variant='body1' sx={{pb:2}}>
-            Eu sou um desenvolvedor font-end com experiência em desenvolvimento e análise de sistemas, provendo soluções em analise, arquitetura, desenvolvimento e manutenção de
-            aplicações web com suas respectivas tecnologias. Expertise em análise de projetos e desenvolvimento de
-            soluções, com desenvolvimento profissional em constante processo de renovação. Eficaz em produzir e relatar
-            dados para a Gestão de Projetos.
+          <Title variant='h4' sx={{ pb: 4 }}>
+            Olá, meu nome é Diego Mota Cavalcante.
+          </Title>
+          <SubTitle variant='body1' sx={{ pb: 2 }}>
+            Eu sou um desenvolvedor font-end com experiência em desenvolvimento e análise de sistemas, provendo soluções
+            em analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas tecnologias.
+            Expertise em análise de projetos e desenvolvimento de soluções, com desenvolvimento profissional em
+            constante processo de renovação. Eficaz em produzir e relatar dados para a Gestão de Projetos.
           </SubTitle>
           <SubTitle variant='body1'>
-          	Tecnologias conhecidas:
-            React.js, Next.js, Material UI, TypeScript, JavaScript, HTML, CSS e Git/GitHub.
+            Tecnologias conhecidas: React.js, Next.js, Material UI, TypeScript, JavaScript, HTML, CSS e Git/GitHub.
           </SubTitle>
         </Typography>
       </CardAbout>
-    </Box>
+    </BoxWrapper>
   )
 }
 

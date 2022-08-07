@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles'
 const Title = styled(Typography)(({ theme }) => ({
   textShadow: '2px 3px 5px #00000030',
   [theme.breakpoints.down('md')]: {
-    fontSize: '58px',
+    fontSize: '58px'
   }
 }))
 const SubTitle = styled(Typography)(({ theme }) => ({
@@ -15,6 +15,17 @@ const SubTitle = styled(Typography)(({ theme }) => ({
     fontSize: '28px'
   }
 }))
+const BoxContain = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  backgroundImage: 'url(/backStart.png)',
+  backgroundPosition: '80% 20%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '40%',
+  [theme.breakpoints.down('md')]: {
+    backgroundPosition: '250% 200%',
+    backgroundSize: '90%'
+  }
+}))
 const BoxWrapper = styled(Box)(({ theme }) => ({
   opacity: '0',
   height: '85vh',
@@ -22,8 +33,8 @@ const BoxWrapper = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   animation: 'cardProfile 1.5s ease-in-out 0.6s forwards',
-  '@keyframes cardProfile':{
-    to:{
+  '@keyframes cardProfile': {
+    to: {
       opacity: '1'
     }
   },
@@ -53,6 +64,7 @@ const BoxStrip = styled(Box)(({ theme }) => ({
     }
   },
   [theme.breakpoints.down('md')]: {
+    backgroundPosition: '80% 60%',
     '@keyframes strips': {
       from: {
         opacity: '0',
@@ -66,12 +78,12 @@ const BoxStrip = styled(Box)(({ theme }) => ({
   }
 }))
 
-const BoxRectangle = styled(Box)(({theme}) => ({
+const BoxRectangle = styled(Box)(({ theme }) => ({
   width: '20%',
   height: '250vh',
   position: 'absolute',
   animation: 'rectangle 1.5s ease-in-out forwards',
-  '@keyframes rectangle':{
+  '@keyframes rectangle': {
     from: {
       opacity: '0',
       transform: 'translate(100vw, 50vh) rotate(0.10turn)'
@@ -99,14 +111,19 @@ const Start = () => {
   const { settings } = useSettings()
 
   return (
-    <Box id='Inicio'
+    <BoxContain
+      id='Inicio'
       sx={
         settings.mode === 'dark'
-          ? { backgroundColor: 'gray', position: 'relative' }
-          : { backgroundColor: 'white', position: 'relative' }
+          ? {
+              backgroundColor: 'gray'
+            }
+          : {
+              backgroundColor: 'white'
+            }
       }
     >
-      <BoxStrip >
+      <BoxStrip>
         <Strip sx={settings.mode === 'dark' ? { backgroundColor: '#312D4B' } : { backgroundColor: '#9155FD' }} />
         <Strip sx={settings.mode === 'dark' ? { backgroundColor: '#312D4B' } : { backgroundColor: '#9155FD' }} />
         <Strip sx={settings.mode === 'dark' ? { backgroundColor: '#312D4B' } : { backgroundColor: '#9155FD' }} />
@@ -154,7 +171,7 @@ const Start = () => {
           </CardActions>
         </Box>
       </BoxWrapper>
-    </Box>
+    </BoxContain>
   )
 }
 
