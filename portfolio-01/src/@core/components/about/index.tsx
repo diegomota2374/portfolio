@@ -92,7 +92,8 @@ const About = () => {
               backgroundColor: '#27243d'
             }
           : {
-              backgroundColor: '#9155FD'
+              backgroundColor: '#9155FD',
+              backgroundImage: 'url(/backAbout2.png)'
             }
       }
     >
