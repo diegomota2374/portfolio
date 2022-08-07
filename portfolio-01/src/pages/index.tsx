@@ -2,6 +2,7 @@
 import Grid from '@mui/material/Grid'
 import About from 'src/@core/components/about'
 import Projects from 'src/@core/components/projects'
+import Skills from 'src/@core/components/skills'
 import Start from 'src/@core/components/start'
 
 // ** Styled Component Import
@@ -20,6 +21,9 @@ const Dashboard = () => {
         </Grid>
         <Grid >
           <Projects/>
+        </Grid>
+        <Grid >
+          <Skills/>
         </Grid>
     </ApexChartWrapper>
   )

@@ -1,9 +1,10 @@
-import { Avatar, Box, Card, Typography } from '@mui/material'
+import { Avatar, Box, Card, Container, Typography } from '@mui/material'
 import { useSettings } from 'src/@core/hooks/useSettings'
 import { styled } from '@mui/material/styles'
 
 const BoxWrapper = styled(Box)(() => ({
-  height: '90vh',
+  minHeight: '90vh',
+  maxHeight: '100%',
   width: '100%',
   position: 'relative',
   display: 'flex',
@@ -18,7 +19,7 @@ const CardAbout = styled(Card)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  width: '70vw',
+  width: '100%',
   padding: '20px',
   position: 'relative',
   filter: 'grayscale(0.5)',
@@ -97,23 +98,26 @@ const About = () => {
             }
       }
     >
-      <CardAbout sx={settings.mode === 'dark' ? { borderColor: 'white' } : { borderColor: 'gray' }}>
-        <AvatarSize alt='Remy Sharp' src='/diego.png' sx={{}} />
-        <Typography sx={{ p: 5 }}>
-          <Title variant='h4' sx={{ pb: 4 }}>
-            Olá, meu nome é Diego Mota Cavalcante.
-          </Title>
-          <SubTitle variant='body1' sx={{ pb: 2 }}>
-            Eu sou um desenvolvedor font-end com experiência em desenvolvimento e análise de sistemas, provendo soluções
-            em analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas tecnologias.
-            Expertise em análise de projetos e desenvolvimento de soluções, com desenvolvimento profissional em
-            constante processo de renovação. Eficaz em produzir e relatar dados para a Gestão de Projetos.
-          </SubTitle>
-          <SubTitle variant='body1'>
-            Tecnologias conhecidas: React.js, Next.js, Material UI, TypeScript, JavaScript, HTML, CSS e Git/GitHub.
-          </SubTitle>
-        </Typography>
-      </CardAbout>
+      <Container>
+        <CardAbout sx={settings.mode === 'dark' ? { borderColor: 'white' } : { borderColor: 'gray' }}>
+          <AvatarSize alt='Remy Sharp' src='/diego.png' sx={{}} />
+          <Typography sx={{ p: 5 }}>
+            <Title variant='h4' sx={{ pb: 4 }}>
+              Olá, meu nome é Diego Mota Cavalcante.
+            </Title>
+            <SubTitle variant='body1' sx={{ pb: 2 }}>
+              Eu sou um desenvolvedor font-end com experiência em desenvolvimento e análise de sistemas, provendo
+              soluções em analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas
+              tecnologias. Expertise em análise de projetos e desenvolvimento de soluções, com desenvolvimento
+              profissional em constante processo de renovação. Eficaz em produzir e relatar dados para a Gestão de
+              Projetos.
+            </SubTitle>
+            <SubTitle variant='body1'>
+              Tecnologias conhecidas: React.js, Next.js, Material UI, TypeScript, JavaScript, HTML, CSS e Git/GitHub.
+            </SubTitle>
+          </Typography>
+        </CardAbout>
+      </Container>
     </BoxWrapper>
   )
 }

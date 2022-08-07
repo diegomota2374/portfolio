@@ -11,46 +11,38 @@ import {
   TableRow,
   Typography
 } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
+const BoxWrapper = styled(Box)(() => ({
+  minHeight: '90vh',
+  maxHeight: '100%',
+  width: '100%',
+  flexGrow: 1,
+  py: 8,
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundImage: 'url(/backProject1.png)',
+  backgroundPosition: '5% 50%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100%'
+}))
 const Projects = () => {
   const { settings } = useSettings()
 
   return (
-    <Box
+    <BoxWrapper
       component='main'
       id='Projetos'
       sx={
         settings.mode === 'dark'
           ? {
-              height: '95vh',
-              width: '100%',
-              flexGrow: 1,
-              py: 8,
-              position: 'relative',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'gray',
-              backgroundImage: 'url(/backProject1.png)',
-              backgroundPosition: '5% 50%',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100%',
+              backgroundColor: 'gray'
             }
           : {
-              height: '95vh',
-              width: '100%',
-              flexGrow: 1,
-              py: 8,
-              position: 'relative',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'white',
-              backgroundImage: 'url(/backProject1.png)',
-              backgroundPosition: '5% 50%',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100%',
+              backgroundColor: 'white'
             }
       }
     >
@@ -183,7 +175,7 @@ const Projects = () => {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </BoxWrapper>
   )
 }
 
