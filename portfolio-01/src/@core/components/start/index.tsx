@@ -28,7 +28,7 @@ const BoxContain = styled(Box)(({ theme }) => ({
 }))
 const BoxWrapper = styled(Box)(({ theme }) => ({
   opacity: '0',
-  height: '85vh',
+  height: '95vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

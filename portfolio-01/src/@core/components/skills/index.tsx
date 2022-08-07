@@ -97,7 +97,7 @@ const Skills = () => {
   }
 
   return (
-    <BoxWrapper id='Habilidades'>
+    <BoxWrapper id='Habilidades' >
       <Container>
         <ListWrapper
           sx={{ backgroundColor: 'background.paper' }}
