@@ -11,9 +11,9 @@ const BoxWrapper = styled(Box)(() => ({
   justifyContent: 'center',
   alignItems: 'center',
   backgroundImage: 'url(/backAbout.png)',
-  backgroundPosition: '0% 10%',
+  backgroundPosition: '0% 100%',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '50%'
+  backgroundSize: '40%'
 }))
 const CardAbout = styled(Card)(({ theme }) => ({
   display: 'flex',

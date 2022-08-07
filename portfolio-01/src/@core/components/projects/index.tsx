@@ -27,8 +27,15 @@ const BoxWrapper = styled(Box)(() => ({
   backgroundImage: 'url(/backProject1.png)',
   backgroundPosition: '5% 50%',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '100%'
+  backgroundSize: '100%',
+  filter: 'grayscale(0.5)',
+  transition: '0.3s',
+  ':hover': {
+    filter: 'unset',
+  },
+
 }))
+
 const Projects = () => {
   const { settings } = useSettings()
 

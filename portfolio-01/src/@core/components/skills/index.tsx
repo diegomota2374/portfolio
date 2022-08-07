@@ -24,7 +24,7 @@ const labels: { [index: string]: string } = {
   5: 'Excelente+'
 }
 
-const BoxWrapper = styled(Box)(({ theme }) => ({
+const BoxWrapper = styled(Box)(() => ({
   minHeight: '90vh',
   maxHeight: '100%',
   width: '100%',
@@ -32,15 +32,20 @@ const BoxWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundImage: 'url(/backSkills.png)',
+  backgroundImage: 'url(/backAbout.png)',
   backgroundPosition: '0% 100%',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '72%',
-  [theme.breakpoints.down('md')]: {}
+  backgroundSize: '42%',
+
 }))
 const ListWrapper = styled(List)(({ theme }) => ({
   width: '100%',
   borderRadius: 5,
+  filter: 'grayscale(0.5)',
+  transition: '0.3s',
+  ':hover': {
+    filter: 'unset',
+  },
   [theme.breakpoints.down('md')]: {
     width: '100%'
   }
