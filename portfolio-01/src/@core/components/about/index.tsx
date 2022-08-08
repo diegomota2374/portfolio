@@ -3,7 +3,7 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 import { styled } from '@mui/material/styles'
 
 const BoxWrapper = styled(Box)(() => ({
-  minHeight: '90vh',
+  minHeight: '85vh',
   maxHeight: '100%',
   width: '100%',
   position: 'relative',

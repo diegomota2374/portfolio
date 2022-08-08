@@ -28,6 +28,9 @@ const BoxWrapper = styled(Box)(() => ({
   backgroundPosition: '5% 50%',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100%',
+
+}))
+const CardWrapper = styled(Card)(() => ({
   filter: 'grayscale(0.5)',
   transition: '0.3s',
   ':hover': {
@@ -56,7 +59,7 @@ const Projects = () => {
       <Container>
         <Grid container spacing={6}>
           <Grid item xs={12}>
-            <Card>
+            <CardWrapper>
               <Grid item xs={12}>
                 <Typography variant='h5' sx={{ p: 5, fontFamily: 'Amatic SC cursive' }}>
                   PROJETOS
@@ -178,7 +181,7 @@ const Projects = () => {
                   </TableContainer>
                 </Card>
               </CardContent>
-            </Card>
+            </CardWrapper>
           </Grid>
         </Grid>
       </Container>

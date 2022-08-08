@@ -25,7 +25,7 @@ const labels: { [index: string]: string } = {
 }
 
 const BoxWrapper = styled(Box)(() => ({
-  minHeight: '90vh',
+  minHeight: '85vh',
   maxHeight: '100%',
   width: '100%',
   position: 'relative',
