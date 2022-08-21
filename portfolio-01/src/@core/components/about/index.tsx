@@ -108,7 +108,7 @@ const About = () => {
             <SubTitle variant='body1' sx={{ pb: 2 }}>
               Eu sou um desenvolvedor font-end com experiência em desenvolvimento e análise de sistemas, provendo
               soluções em analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas
-              tecnologias. Expertise em análise de projetos e desenvolvimento de soluções, com desenvolvimento
+              tecnologias. Expertise em garantir uma experiência positiva ao usuário, com desenvolvimento
               profissional em constante processo de renovação. Eficaz em produzir e relatar dados para a Gestão de
               Projetos.
             </SubTitle>

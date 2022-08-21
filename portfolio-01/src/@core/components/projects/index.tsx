@@ -5,6 +5,7 @@ import {
   CardMedia,
   Container,
   Grid,
+  Link,
   Table,
   TableCell,
   TableContainer,
@@ -27,16 +28,14 @@ const BoxWrapper = styled(Box)(() => ({
   backgroundImage: 'url(/backProject1.png)',
   backgroundPosition: '5% 50%',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '100%',
-
+  backgroundSize: '100%'
 }))
 const CardWrapper = styled(Card)(() => ({
   filter: 'grayscale(0.5)',
   transition: '0.3s',
   ':hover': {
-    filter: 'unset',
-  },
-
+    filter: 'unset'
+  }
 }))
 
 const Projects = () => {
@@ -72,17 +71,25 @@ const Projects = () => {
                       <TableRow hover sx={{ '&:last-of-type td, &:last-of-type th': { border: 0 } }}>
                         <TableCell>
                           <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
-                            <CardMedia
-                              component='img'
-                              sx={{
-                                height: 233,
-                                width: 233,
-                                borderRadius: 2,
-                                maxHeight: { xs: 93, md: 167 },
-                                maxWidth: { xs: 93, md: 167 }
-                              }}
-                              src='/projeto01.png'
-                            />
+                            <Link
+                              href='https://nanofarmaco.com.br'
+                              rel='noopener'
+                              variant='body2'
+                              target='_blank'
+                              underline='none'
+                            >
+                              <CardMedia
+                                component='img'
+                                sx={{
+                                  height: 233,
+                                  width: 233,
+                                  borderRadius: 2,
+                                  maxHeight: { xs: 93, md: 167 },
+                                  maxWidth: { xs: 93, md: 167 }
+                                }}
+                                src='/projeto01.png'
+                              />
+                            </Link>
                             <Box
                               sx={{
                                 mx: 4,
