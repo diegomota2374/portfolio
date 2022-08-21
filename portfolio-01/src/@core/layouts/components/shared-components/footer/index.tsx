@@ -7,6 +7,8 @@ import { useTheme } from '@mui/material/styles'
 
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
+import { Typography } from '@mui/material'
+import { EmailOutlined, Phone } from '@mui/icons-material'
 
 interface Props {
   settings: Settings
@@ -44,7 +46,23 @@ const Footer = (props: Props) => {
           padding: theme.spacing(4, 6),
           ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
         }}
-      ></Box>
+      >
+        {' '}
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'start' }}>
+          <Typography variant='body1'>
+            <EmailOutlined sx={{ mr: 5 }} />
+            diegomota2374@gmail.com
+          </Typography>
+          <Typography variant='body1'>
+            <Phone sx={{ mr: 5 }} />
+            (85)99637-0976
+          </Typography>
+          <Typography variant='body1'>
+            <Phone sx={{ mr: 5 }} />
+            (85)99984-6994
+          </Typography>
+        </Box>
+      </Box>
     </Box>
   )
 }

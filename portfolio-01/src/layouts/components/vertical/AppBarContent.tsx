@@ -24,7 +24,7 @@ interface Props {
   saveSettings: (values: Settings) => void
 }
 
-const pages = ['Inicio', 'Sobre mim', 'Projetos', 'Habilidades','Contato']
+const pages = ['Inicio', 'Sobre mim', 'Projetos', 'Habilidades']
 
 const ReactIcon = styled(Avatar)(() => ({
   padding: '4px',
