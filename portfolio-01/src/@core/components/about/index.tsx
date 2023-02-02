@@ -106,11 +106,11 @@ const About = () => {
               Olá, meu nome é Diego Mota Cavalcante.
             </Title>
             <SubTitle variant='body1' sx={{ pb: 2 }}>
-              Atualmente cursando Analise e desenvolvimento de sistemas pela Unicesumar.
+              Atualmente cursando Análise e desenvolvimento de sistemas pela Unicesumar.
             </SubTitle>
             <SubTitle variant='body1' sx={{ pb: 2 }}>
               Eu sou um desenvolvedor web com experiência em desenvolvimento e análise de sistemas, provendo soluções em
-              analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas tecnologias.
+              análise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas tecnologias.
               Expertise em garantir uma experiência positiva ao usuário, com desenvolvimento profissional em constante
               processo de renovação. Eficaz em produzir e relatar dados para a Gestão de Projetos.
             </SubTitle>
