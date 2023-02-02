@@ -106,11 +106,13 @@ const About = () => {
               Olá, meu nome é Diego Mota Cavalcante.
             </Title>
             <SubTitle variant='body1' sx={{ pb: 2 }}>
-              Eu sou um desenvolvedor font-end com experiência em desenvolvimento e análise de sistemas, provendo
-              soluções em analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas
-              tecnologias. Expertise em garantir uma experiência positiva ao usuário, com desenvolvimento
-              profissional em constante processo de renovação. Eficaz em produzir e relatar dados para a Gestão de
-              Projetos.
+              Atualmente cursando Analise e desenvolvimento de sistemas pela Unicesumar.
+            </SubTitle>
+            <SubTitle variant='body1' sx={{ pb: 2 }}>
+              Eu sou um desenvolvedor web com experiência em desenvolvimento e análise de sistemas, provendo soluções em
+              analise, arquitetura, desenvolvimento e manutenção de aplicações web com suas respectivas tecnologias.
+              Expertise em garantir uma experiência positiva ao usuário, com desenvolvimento profissional em constante
+              processo de renovação. Eficaz em produzir e relatar dados para a Gestão de Projetos.
             </SubTitle>
             <SubTitle variant='body1'>
               Tecnologias conhecidas: React.js, Next.js, Material UI, TypeScript, JavaScript, HTML, CSS e Git/GitHub.

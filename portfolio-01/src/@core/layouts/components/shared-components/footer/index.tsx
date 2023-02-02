@@ -94,8 +94,8 @@ const Footer = (props: Props) => {
             Sobre:
           </Sobre>
           <Sobre variant='body1'>
-            Desenvolvedor front-end em inicio de carreira, procurando oportunidade para entrar no mercado, com muita
-            dedicação e vontade de aprender.
+            Desenvolvedor web em inicio de carreira, procurando oportunidade para entrar no mercado, com muita dedicação
+            e vontade de aprender.
           </Sobre>
           <Box sx={{ display: 'flex' }}>
             <Link

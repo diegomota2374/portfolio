@@ -143,7 +143,7 @@ const Start = () => {
             DIEGO MOTA
           </Title>
           <SubTitle variant='h3' sx={{ fontFamily: 'Amatic SC cursive' }}>
-            FRONT-END DEVELOPER
+            FULL-STACK DEVELOPER
           </SubTitle>
           <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
             <Link

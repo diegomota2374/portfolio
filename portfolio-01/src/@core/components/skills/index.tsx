@@ -35,8 +35,7 @@ const BoxWrapper = styled(Box)(() => ({
   backgroundImage: 'url(/backAbout.png)',
   backgroundPosition: '0% 100%',
   backgroundRepeat: 'no-repeat',
-  backgroundSize: '42%',
-
+  backgroundSize: '42%'
 }))
 const ListWrapper = styled(List)(({ theme }) => ({
   width: '100%',
@@ -44,7 +43,7 @@ const ListWrapper = styled(List)(({ theme }) => ({
   filter: 'grayscale(0.5)',
   transition: '0.3s',
   ':hover': {
-    filter: 'unset',
+    filter: 'unset'
   },
   [theme.breakpoints.down('md')]: {
     width: '100%'
@@ -53,6 +52,7 @@ const ListWrapper = styled(List)(({ theme }) => ({
 const Skills = () => {
   const react = 1.5
   const next = 1.5
+  const node = 1.0
   const ts = 1.0
   const html = 2.5
   const css = 2.5
@@ -63,6 +63,8 @@ const Skills = () => {
   const [openReact, setOpenReact] = useState(false)
 
   const [openNext, setOpenNext] = useState(false)
+
+  const [openNode, setOpenNode] = useState(false)
 
   const [openTs, setOpenTs] = useState(false)
 
@@ -81,6 +83,9 @@ const Skills = () => {
   }
   const handleClickNext = () => {
     setOpenNext(!openNext)
+  }
+  const handleClickNode = () => {
+    setOpenNode(!openNode)
   }
   const handleClickTs = () => {
     setOpenTs(!openTs)
@@ -102,7 +107,7 @@ const Skills = () => {
   }
 
   return (
-    <BoxWrapper id='Habilidades' >
+    <BoxWrapper id='Habilidades'>
       <Container>
         <ListWrapper
           sx={{ backgroundColor: 'background.paper' }}
@@ -185,6 +190,44 @@ const Skills = () => {
                     Conhecimento adquirido através de cursos, como "React e Next.js" da Cod3r ou "Next.js básico" da
                     DIO, com videos e artigos visualizados no Google e YouTube, e na pratica, devido ao projeto
                     desenvolvido 'NANO FARMACO', que utiliza esta tecnologia.
+                  </Typography>
+                </ListItemText>
+              </ListItemButton>
+            </List>
+          </Collapse>
+
+          <ListItemButton onClick={handleClickNode}>
+            <ListItemIcon>
+              <Avatar alt='node' src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' />
+            </ListItemIcon>
+            <ListItemText primary='Node.js' />
+
+            <Box
+              sx={{
+                width: 200,
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
+              <Rating
+                name='text-feedback'
+                value={node}
+                readOnly
+                precision={0.5}
+                emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize='inherit' />}
+              />
+              <Box sx={{ ml: 2 }}>{labels[node]}</Box>
+            </Box>
+            {openNode ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+
+          <Collapse in={openNode} timeout='auto' unmountOnExit>
+            <List component='div' disablePadding>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemText>
+                  <Typography variant='subtitle2' sx={{ p: 5 }}>
+                    Conhecimento adquirido através de cursos como "node.js e express" no YouTube ou "node.js basico" da
+                    DIO.
                   </Typography>
                 </ListItemText>
               </ListItemButton>
